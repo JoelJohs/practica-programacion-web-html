@@ -1,5 +1,6 @@
 :root {
   --fondo: #edfffe;
+  --fondo-fin: #cffefd;
   --barra-navegacion: #008c91;
   --barra-navegacion-hover: #ffa500;
   --color-texto: #001f3f;
@@ -10,20 +11,49 @@
 
 html {
   font-size: 62.5%;
+  box-sizing: border-box;
 }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
   font-size: 16px;
-  background-color: var(--fondo);
+  background-image: linear-gradient(
+    to top,
+    var(--fondo-fin) 0%,
+    var(--fondo) 100%
+  );
   background-size: 100% 100%;
 }
-/* 
-    Lo modificado en html y body hace que 1rem = 10 px
+/*
+Lo modificado en html y body hace que 1rem = 10 px
 */
 
-.titulo {
-  text-align: center;
-  font-size: 3.5rem;
+h1 {
+  font-size: 3.8rem;
   color: var(--color-texto);
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+p {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -38,6 +68,27 @@ body {
   margin: 0 auto;
 }
 
+.sombra {
+  box-shadow: 10px 10px 29px 4px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 29px 4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 29px 4px rgba(0, 0, 0, 0.75);
+  background-color: var(--color-texto-blanco);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.boton {
+  background-color: var(--barra-navegacion);
+  color: var(--color-texto-blanco);
+  text-decoration: none;
+  padding: 1rem 3rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  border-radius: 0.5rem;
+}
+
 .nav-bg {
   background-color: var(--barra-navegacion);
 }
@@ -46,6 +97,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
 .navegacion-principal a {
   padding: 1rem;
   color: var(--color-texto-blanco);
@@ -60,18 +112,38 @@ body {
   background-color: var(--barra-navegacion-hover);
 }
 
-p {
-  font-family: "Montserrat", sans-serif;
+.hero {
+  background-image: url(../img/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+  position: relative;
+  margin-bottom: 2rem;
 }
 
-@media (min-width: 768px) {
-  .navegacion-principal {
-    flex-direction: row;
-  }
+.contenido-hero {
+  position: absolute;
+  background-color: rgb(0 0 0 / 60%);
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-@media (min-width: 992px) {
-  .navegacion-principal {
-    flex-direction: row;
-  }
+.contenido-hero h2,
+.contenido-hero p {
+  color: var(--color-texto-blanco);
+}
+
+.ubicacion {
+  display: flex;
+  align-items: flex-end;
+}
+
+/*Servicios*/
+.servicios {
+  display: grid;
 }
