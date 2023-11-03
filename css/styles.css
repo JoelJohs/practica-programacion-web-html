@@ -1,0 +1,38 @@
+:root{
+    --fondo: #edfffe;
+    --barranavegacion: #00b2b7;
+    --color-texto: #001f3f;
+    --detalles: #FF85A2;
+
+}
+
+html{
+    font-size: 62.5%;
+
+}
+body{
+    font-size: 16px;
+    background-color:var(--fondo);
+    background-size: 100% 100%;
+}
+/* 
+    Lo modificado en html y body hace que 1rem = 10 px
+*/
+
+.titulo{
+    text-align: center;
+    font-size: 3.5rem;
+    color: var(--color-texto);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.titulo span{
+    color: var(--detalles);
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+p{
+    font-family: 'Montserrat', sans-serif;
+}
